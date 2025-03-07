@@ -1,0 +1,160 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change /home/bruno/.config/i3blocks/scripts to the location of your scripts!
+command=/home/bruno/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=20
+markup="pango"
+
+
+######################################################################################
+
+
+[gpu-load]
+label=GPU 
+interval=10
+#min_width=GPU 100% 100% 100% 100%
+GPU_BRAND=NVIDIA
+#T_WARN=70
+#T_CRIT=90
+color=#a6d189
+
+[memory]
+label=󰍛 
+interval=30
+color=#babbf1
+
+[temperature]
+label= 
+color=#8caaee
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+[cpu_usage]
+interval=10
+label= 
+color=#99d1db
+#min_width=CPU: 100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
+#COLOR_NORMAL=#EBDBB2
+#COLOR_WARN=#FFFC00
+#COLOR_CRIT=#FF0000
+
+[jas]
+color=#babbf1
+label=󰃟 
+markup="pango"
+interval=5
+signal=10
+STEP_SIZE=5
+
+[battery]
+interval=5
+label=  
+color=#a6d189
+
+#[spotify]
+#label= 
+#command=python3 /home/bruno/.config/i3blocks/scripts/spotify/spotify.py
+#color=#50fab0
+#interval=5
+
+#[volume]
+#label=󰕾 
+#interval=1
+#signal=10
+#color=#ef9f76
+#markup=pango
+
+[volume-pulseaudio]
+interval=once
+signal=11
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+#exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+DEFAULT_COLOR="#c6d0f5"
+MUTED_COLOR="#e78284"
+#USE_ALSA_NAME=1
+USE_DESCRIPTION=1
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
+
+#[mediaplayer]
+# This picks any player, with vlc as first, and spotify as last choice
+#instance=spotify
+#label= 
+#color=#c6a0f6
+#interval=5
+#signal=10
+
+[rofi-calendar]
+interval=3600
+BAR_POSITION=top
+WEEK_START=monday
+#DATEFTM=+%a %d %b %Y
+#SHORTFMT=+%d/%m/%Y
+#LABEL= 
+#FONT=Monospace 10
+#LEFTCLICK_PREV_MONTH=false
+#PREV_MONTH_TEXT=« previous month «
+#NEXT_MONTH_TEXT=» next month »
+#ROFI_CONFIG_FILE=/dev/null
+
+# Date Time
+[time]
+command=date '+%H:%M:%S'
+label= 
+interval=1
+color=#c6d0f5
+
+[keyindicator]
+KEY=NUM
+markup=pango
+interval=once
+signal=11
+
+# Rofi baii
+[shutdown_menu]
+full_text= 
+min_width=16
+color=#e78284
+
+[separator]
+#full_text=⠀
+
+####################################################################################
